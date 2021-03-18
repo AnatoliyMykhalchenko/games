@@ -1,3 +1,5 @@
+<app-search (typeInputValue)="filterGamesByName($event)"></app-search>
+
 <div *ngIf="games$ | async as games; else loading">
   <div style="display: flex; align-items: center">
     <h3>Cамые популярные</h3>

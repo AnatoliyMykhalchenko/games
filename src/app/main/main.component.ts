@@ -9,17 +9,21 @@ import { from } from 'rxjs';
 })
 export class MainComponent implements OnInit {
   games$ = this.gamesService.getGames();
+  categoryId = null;
 
   constructor(private gamesService: GamesService) {}
 
   ngOnInit(): void {}
 
   changeCategory(id) {
-    this.games$ = this.gamesService.getGames().pipe(map(games => games.filter(game => game.category_id === id)));
+    this.categoryId = id;
+    this.games$ = this.gamesService
+      .getGames()
+      .pipe(map((games) => games.filter((game) => game.category_id === id)));
   }
 
   resetCategory() {
+    this.categoryId = null;
     this.games$ = this.gamesService.getGames();
   }
-
 }
