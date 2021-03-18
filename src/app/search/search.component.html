@@ -1,4 +1,8 @@
 <div class="input-wrapper">
-  <input type="text" (input)="typeInputValue.emit($event.target.value)" />
+  <input
+    placeholder="Поиск игр"
+    type="text"
+    (input)="typeInputValue.emit($event.target.value)"
+  />
   <mat-icon>search</mat-icon>
 </div>

@@ -15,11 +15,9 @@
     </select>
   </div>
 
-  <mat-divider style="margin: 20px 0"></mat-divider>
+  <mat-divider></mat-divider>
 
-  <div class="text">
-    <div *ngFor="let text of footerText">
-      <div style="margin-bottom: 20px;">{{ text }}</div>
-    </div>
+  <div class="text" *ngFor="let text of footerText">
+    {{ text }}
   </div>
 </div>

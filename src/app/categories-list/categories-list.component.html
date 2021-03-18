@@ -1,4 +1,4 @@
-<h2 style="text-align: center">Choose a category</h2>
+<h2>Choose a category</h2>
 <ng-container *ngIf="categories$ | async as categories; else loading">
   <div class="categories">
     <div
@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <div style="display: flex; justify-content: center;">
+  <div class="button-container">
     <button mat-button (click)="resetCategory.emit()">Сбросить</button>
   </div>
 </ng-container>
