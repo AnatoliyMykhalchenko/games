@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
@@ -29,6 +30,7 @@ import { SearchComponent } from './search/search.component';
     RouterModule,
     BrowserAnimationsModule,
     MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],
