@@ -1,0 +1,23 @@
+.wrapper {
+  background-color: #d7d7d7;
+  padding: 5px 10px;
+
+  .main-info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    .links {
+      display: flex;
+      justify-content: space-around;
+
+      .link {
+        width: 25%;
+      }
+    }
+    select {
+      height: 20px;
+      margin-top: 20px;
+    }
+  }
+}
