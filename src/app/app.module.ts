@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { AppComponent } from './app.component';
 import { CategoriesListComponent } from './categories-list/categories-list.component';
+import { GamesListComponent } from './games-list/games-list.component';
 import { MainComponent } from './main/main.component';
 import { RoutingModule } from './routing.module';
 
@@ -14,7 +15,8 @@ import { RoutingModule } from './routing.module';
   declarations: [
     AppComponent,
     MainComponent, 
-    CategoriesListComponent
+    CategoriesListComponent,
+    GamesListComponent
   ],
   imports: [
     BrowserModule,
