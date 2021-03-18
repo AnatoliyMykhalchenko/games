@@ -1,0 +1,10 @@
+<h2 style="text-align: center;">Choose a category</h2>
+
+<div *ngIf="categories$ | async as catergories; else loading" class="categories">
+  <div class="item" *ngFor="let category of catergories">
+    <img class="image" [src]="category.img" alt="" />
+    <h3 class="title">{{ category.title_ru }}</h3>
+  </div>
+</div>
+
+<ng-template #loading>loading...</ng-template>
