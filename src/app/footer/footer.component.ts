@@ -8,7 +8,7 @@ import { FooterInfoService } from '../services/footer-info/footer-info.service';
 })
 export class FooterComponent implements OnInit {
   links = this.info.navLinks;
-  footerText = Array.from({ length: 7 }).map((_) => this.info.footerText);
+  footerText = Array.from({ length: 9 }).map(() => this.info.footerText);
 
   constructor(private info: FooterInfoService) { }
 
