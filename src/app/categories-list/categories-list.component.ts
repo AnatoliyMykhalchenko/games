@@ -1,8 +1,10 @@
 import { createHostListener } from '@angular/compiler/src/core';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CatergoriesService } from '../services/categories/catergories.service';
 import { LocalizationService } from '../services/localization/localization.service';
+import { Category } from './categories-list.types';
 
 @Component({
   selector: 'app-categories-list',
@@ -10,10 +12,10 @@ import { LocalizationService } from '../services/localization/localization.servi
   styleUrls: ['./categories-list.component.scss'],
 })
 export class CategoriesListComponent implements OnInit {
-  categories$ = this.categoriesService.getCategories();
+  categories$: Observable<Category[]> = this.categoriesService.getCategories();
   names = {
     chooseCategory: this.localService.getLanguageData().chooseCategory,
-    reset: this.localService.getLanguageData().reset
+    reset: this.localService.getLanguageData().reset,
   };
   @Output() changeCategoryId = new EventEmitter();
   @Output() resetCategory = new EventEmitter();

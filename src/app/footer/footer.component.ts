@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { LocalizationService } from '../services/localization/localization.service';
+import { Lang, NavLink } from '../services/localization/localization.types';
 
 @Component({
   selector: 'app-footer',
@@ -8,8 +9,8 @@ import { LocalizationService } from '../services/localization/localization.servi
   styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  links = this.localService.getLanguageData().navLinks;
-  footerText = Array.from({ length: 9 }).map(
+  links: NavLink[] = this.localService.getLanguageData().navLinks;
+  footerText: string[] = Array.from({ length: 9 }).map(
     () => this.localService.getLanguageData().footerText
   );
 
@@ -20,12 +21,12 @@ export class FooterComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  changeLanguage(lang) {
+  changeLanguage(lang: Lang) {
     this.localService.language = lang;
     this.router.navigate([lang]);
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.localService.language = event.urlAfterRedirects.slice(1);
+        this.localService.language = lang;
       }
     });
   }
