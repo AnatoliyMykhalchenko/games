@@ -1,0 +1,23 @@
+.input-wrapper {
+  padding: 12px 20px;
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #3399fe;
+
+  input {
+    width: 95%;
+  }
+
+  .mat-icon {
+    color: #fff;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .input-wrapper {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

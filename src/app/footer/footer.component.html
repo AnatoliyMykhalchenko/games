@@ -1,0 +1,23 @@
+<div class="wrapper">
+  <div class="main-info">
+    <div class="links">
+      <div class="link" *ngFor="let link of links">
+        <h3>{{ link.title }}</h3>
+        <div *ngFor="let sublink of link.links">
+          <a href="#">{{ sublink.title }}</a>
+        </div>
+      </div>
+    </div>
+    <select>
+      <option *ngFor="let lang of ['ru', 'en']" [value]="lang">
+        {{ lang }}
+      </option>
+    </select>
+  </div>
+
+  <mat-divider></mat-divider>
+
+  <div class="text" *ngFor="let text of footerText">
+    {{ text }}
+  </div>
+</div>
