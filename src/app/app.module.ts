@@ -15,6 +15,7 @@ import { GamesListComponent } from './games-list/games-list.component';
 import { MainComponent } from './main/main.component';
 import { RoutingModule } from './routing.module';
 import { SearchComponent } from './search/search.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { SearchComponent } from './search/search.component';
     CategoriesListComponent,
     GamesListComponent,
     SearchComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,6 +36,7 @@ import { SearchComponent } from './search/search.component';
     MatIconModule,
     MatButtonModule,
     MatDividerModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
