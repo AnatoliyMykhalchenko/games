@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
+import { Observable } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
+import { Category } from 'src/app/categories-list/categories-list.types';
 import { LocalizationService } from '../localization/localization.service';
 
 @Injectable({
@@ -12,7 +14,7 @@ export class CatergoriesService {
     private localService: LocalizationService
   ) {}
 
-  getCategories() {
+  getCategories(): Observable<Category[]> {
     return this.db
       .object('categories')
       .valueChanges()
@@ -26,6 +28,6 @@ export class CatergoriesService {
                 : category.title_en,
           }))
         )
-      );
+      ) as Observable<Category[]>;
   }
 }

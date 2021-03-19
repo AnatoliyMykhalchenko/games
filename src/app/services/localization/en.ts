@@ -1,4 +1,6 @@
-export const en = {
+import { Language } from './localization.types';
+
+export const en: Language = {
   chooseCategory: 'Choose a category',
   reset: 'Reset',
   gamesSearch: 'Search Game',

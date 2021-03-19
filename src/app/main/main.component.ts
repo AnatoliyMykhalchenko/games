@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { Game } from '../games-list/games-list.types';
 import { GamesService } from '../services/games/games.service';
-import { filter, map } from 'rxjs/operators';
-import { from } from 'rxjs';
 @Component({
   selector: 'app-main',
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss'],
 })
 export class MainComponent implements OnInit {
-  games$ = this.gamesService.getGames();
-  categoryId = null;
+  games$: Observable<Game[]> = this.gamesService.getGames();
+  categoryId: number = null;
 
   constructor(private gamesService: GamesService) {}
 

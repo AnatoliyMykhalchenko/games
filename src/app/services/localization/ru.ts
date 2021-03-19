@@ -1,4 +1,6 @@
-export const ru = {
+import { Language } from "./localization.types";
+
+export const ru: Language = {
   chooseCategory: 'Выберите катeгорию',
   reset: 'Сбрoсить',
   gamesSearch: 'Поиск игр',
