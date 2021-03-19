@@ -1,0 +1,53 @@
+.popular {
+  display: flex;
+  align-items: center;
+}
+
+.games {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+
+  .item {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-bottom: 60px;
+
+    .image {
+      border: 10px solid #cccac8;
+      img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border: 3px solid #ffffff;
+      }
+    }
+
+    .title {
+      height: 40px;
+      width: 100%;
+      margin: 0;
+      text-align: center;
+      line-height: 40px;
+      background-color: #3399fe;
+      color: #ffffff;
+    }
+  }
+}
+
+.count {
+  padding: 4px 10px;
+  background-color: #ff6661;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 500px) {
+  .games {
+    justify-content: space-around;
+  }
+}

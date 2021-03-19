@@ -1,0 +1,8 @@
+<div class="input-wrapper">
+  <input
+    [placeholder]="placeholder"
+    type="text"
+    (input)="typeInputValue.emit($event.target.value)"
+  />
+  <mat-icon>search</mat-icon>
+</div>

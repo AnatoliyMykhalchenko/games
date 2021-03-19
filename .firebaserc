@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "werush-5710b": {
+      "hosting": {
+        "games": [
+          "werush-5710b"
+        ]
+      }
+    }
+  }
+}

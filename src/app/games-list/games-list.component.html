@@ -1,0 +1,21 @@
+<app-search (typeInputValue)="filterGamesByName($event)"></app-search>
+
+<div *ngIf="games$ | async as games; else loading">
+  <div class="popular">
+    <h3>{{ mostPopular }}</h3>
+    <span class="count">{{ games.length }}</span>
+  </div>
+
+  <div class="games">
+    <div class="item" *ngFor="let game of games">
+      <div>
+        <div class="image">
+          <img [src]="game.img" alt="" />
+        </div>
+        <h3 class="title">{{ game.title }}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>loading...</ng-template>

@@ -1,0 +1,19 @@
+<h2>{{ names.chooseCategory }}</h2>
+<ng-container *ngIf="categories$ | async as categories; else loading">
+  <div class="categories">
+    <div
+      class="item"
+      *ngFor="let category of categories"
+      (click)="changeCategoryId.emit(category.id)"
+    >
+      <img class="image" [src]="category.img" alt="" />
+      <h3 class="title">{{ category.title }}</h3>
+    </div>
+  </div>
+
+  <div class="button-container">
+    <button mat-button (click)="resetCategory.emit()">{{ names.reset }}</button>
+  </div>
+</ng-container>
+
+<ng-template #loading>loading...</ng-template>

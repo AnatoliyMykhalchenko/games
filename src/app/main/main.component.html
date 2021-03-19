@@ -1,0 +1,6 @@
+<app-categories-list
+  (changeCategoryId)="changeCategory($event)"
+  (resetCategory)="resetCategory()"
+></app-categories-list>
+<app-games-list [categoryId]="categoryId" [games$]="games$"></app-games-list>
+<app-footer></app-footer>
