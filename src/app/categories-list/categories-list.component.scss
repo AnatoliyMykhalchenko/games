@@ -45,3 +45,37 @@ h2 {
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 500px) {
+  .categories {
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .item {
+      width: 31%;
+      transform: rotate(0deg);
+
+      &:not(:first-child) {
+        margin-left: 0;
+      }
+
+      &:hover {
+        transform: translateY(-20px);
+        cursor: pointer;
+        & ~ .item {
+          position: relative;
+          left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .categories {
+    justify-content: space-around;
+    .item {
+      width: 70%;
+    }
+  }
+}

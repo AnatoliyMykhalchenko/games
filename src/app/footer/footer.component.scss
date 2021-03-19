@@ -29,3 +29,19 @@
     margin-bottom: 20px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .wrapper {
+    width: 95%;
+    margin: 0 auto;
+    font-size: .7rem;
+
+    .main-info {
+      flex-flow: column;
+
+      .links {
+        flex-flow: column;
+      }
+    }
+  }
+}
