@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { GamesService } from '../services/games/games.service';
+import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
   selector: 'app-games-list',
@@ -8,15 +9,18 @@ import { GamesService } from '../services/games/games.service';
   styleUrls: ['./games-list.component.scss'],
 })
 export class GamesListComponent implements OnInit {
+  mostPopular = this.localService.getLanguageData().mostPopular;
   @Input() games$ = this.gamesService.getGames();
   @Input() categoryId;
 
-  constructor(private gamesService: GamesService) {}
+  constructor(
+    private gamesService: GamesService,
+    private localService: LocalizationService
+  ) {}
 
   ngOnInit(): void {}
 
   filterGamesByName(text) {
-    console.log(text);
     this.games$ = this.gamesService.getGames().pipe(
       map((games) =>
         games.filter((game) => {

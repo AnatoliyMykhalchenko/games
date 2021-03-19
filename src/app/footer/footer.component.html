@@ -8,8 +8,8 @@
         </div>
       </div>
     </div>
-    <select>
-      <option *ngFor="let lang of ['ru', 'en']" [value]="lang">
+    <select (change)="changeLanguage($event.target.value)">
+      <option [selected]="lang === localService.language" *ngFor="let lang of ['ru', 'en']" [value]="lang">
         {{ lang }}
       </option>
     </select>

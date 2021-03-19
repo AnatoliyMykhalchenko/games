@@ -2,7 +2,7 @@
 
 <div *ngIf="games$ | async as games; else loading">
   <div class="popular">
-    <h3>Cамые популярные</h3>
+    <h3>{{ mostPopular }}</h3>
     <span class="count">{{ games.length }}</span>
   </div>
 

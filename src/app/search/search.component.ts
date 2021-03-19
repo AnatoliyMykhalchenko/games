@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
   selector: 'app-search',
@@ -7,8 +8,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
   @Output() typeInputValue = new EventEmitter();
+  placeholder = this.localService.getLanguageData().gamesSearch;
 
-  constructor() {}
+  constructor(private localService: LocalizationService) {}
 
   ngOnInit(): void {}
 }
