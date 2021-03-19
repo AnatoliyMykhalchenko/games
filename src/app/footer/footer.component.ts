@@ -1,18 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterInfoService } from '../services/footer-info/footer-info.service';
+import { NavigationEnd, Router } from '@angular/router';
+import { LocalizationService } from '../services/localization/localization.service';
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-  links = this.info.navLinks;
-  footerText = Array.from({ length: 9 }).map(() => this.info.footerText);
+  links = this.localService.getLanguageData().navLinks;
+  footerText = Array.from({ length: 9 }).map(
+    () => this.localService.getLanguageData().footerText
+  );
 
-  constructor(private info: FooterInfoService) { }
+  constructor(
+    private localService: LocalizationService,
+    private router: Router
+  ) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  changeLanguage(lang) {
+    this.localService.language = lang;
+    this.router.navigate([lang]);
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.localService.language = event.urlAfterRedirects.slice(1);
+      }
+    });
   }
-
 }

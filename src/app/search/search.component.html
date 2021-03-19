@@ -1,6 +1,6 @@
 <div class="input-wrapper">
   <input
-    placeholder="Поиск игр"
+    [placeholder]="placeholder"
     type="text"
     (input)="typeInputValue.emit($event.target.value)"
   />
